@@ -4,6 +4,7 @@ use std::{sync::mpsc, thread, time::Duration};
 
 #[derive(Debug, Clone, Copy)]
 pub struct EventConfig {
+    #[allow(dead_code)]
     pub exit_key: Key,
     pub tick_rate: Duration,
 }

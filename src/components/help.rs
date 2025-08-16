@@ -135,7 +135,7 @@ impl HelpComponent {
         self.selection = new_selection.min(self.cmds.len().saturating_sub(1) as u16);
     }
 
-    fn get_text(&self, width: usize) -> Vec<Spans> {
+    fn get_text(&self, width: usize) -> Vec<Spans<'_>> {
         let mut txt: Vec<Spans> = Vec::new();
 
         let mut processed = 0;
@@ -151,7 +151,7 @@ impl HelpComponent {
                 processed += 1;
 
                 txt.push(Spans::from(Span::styled(
-                    format!(" {}{:w$}", command_info.text.name, w = width),
+                    format!(" {}{w:w$}", command_info.text.name, w = width),
                     if is_selected {
                         Style::default().bg(Color::Blue)
                     } else {
