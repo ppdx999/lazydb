@@ -1,13 +1,12 @@
 <div align="center">
 
-![lazydb](./resources/logo.png)
+<img src="./resources/logo.svg" alt="lazydb" width="300">
 
 lazydb is currently in alpha
 
 A cross-platform TUI database management tool written in Rust
 
 
-![lazydb](./resources/lazydb.gif)
 
 </div>
 
