@@ -6,6 +6,8 @@ lazydb is currently in alpha
 
 A cross-platform TUI database management tool written in Rust
 
+**Note:** This project is a fork of [TaKO8Ki/gobang](https://github.com/TaKO8Ki/gobang)
+
 
 
 </div>
@@ -122,6 +124,10 @@ name = "postgres Bar DB"
 type = "sqlite"
 path = "/path/to/baz.db"
 ```
+
+## Acknowledgments
+
+This project is built upon the excellent work of [TaKO8Ki/gobang](https://github.com/TaKO8Ki/gobang). We are grateful to [Takayuki Maeda](https://github.com/TaKO8Ki) and all contributors to the original project for creating such a solid foundation for database management tools.
 
 ## Contribution
 

@@ -1,13 +1,13 @@
 [package]
-name = "gobang"
-version = "0.1.0-alpha.5"
-authors = ["Takayuki Maeda <takoyaki0316@gmail.com>"]
+name = "lazydb"
+version = "0.1.0"
+authors = ["ppdx999 <example@email.com>"]
 edition = "2018"
 license = "MIT"
-homepage = "https://github.com/TaKO8Ki/gobang"
-repository = "https://github.com/TaKO8Ki/gobang"
+homepage = "https://github.com/ppdx999/lazydb"
+repository = "https://github.com/ppdx999/lazydb"
 readme = "README.md"
-description = "A cross-platform TUI database management tool written in Rust"
+description = "A cross-platform TUI database management tool written in Rust (Fork of TaKO8Ki/gobang)"
 exclude = ["resources/"]
 
 [workspace]
@@ -29,7 +29,7 @@ serde = "1.0"
 toml = "0.4"
 strum = "0.21"
 strum_macros = "0.21"
-database-tree = { path = "./database-tree", version = "0.1.0-alpha.5" }
+database-tree = { path = "./database-tree", version = "0.1.0" }
 easy-cast = "0.4"
 async-trait = "0.1.50"
 itertools = "0.10.0"
