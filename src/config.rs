@@ -114,6 +114,7 @@ pub struct KeyConfig {
     pub tab_properties: Key,
     pub extend_or_shorten_widget_width_to_right: Key,
     pub extend_or_shorten_widget_width_to_left: Key,
+    pub toggle_main_panels: Key,
 }
 
 impl Default for KeyConfig {
@@ -153,6 +154,7 @@ impl Default for KeyConfig {
             tab_indexes: Key::Char('7'),
             extend_or_shorten_widget_width_to_right: Key::Char('>'),
             extend_or_shorten_widget_width_to_left: Key::Char('<'),
+            toggle_main_panels: Key::Tab,
         }
     }
 }

@@ -76,8 +76,8 @@ pub fn filter(key: &KeyConfig) -> CommandText {
 pub fn move_focus(key: &KeyConfig) -> CommandText {
     CommandText::new(
         format!(
-            "Move focus to left/right [{},{}]",
-            key.focus_left, key.focus_right
+            "Move focus to left/right [{}{}] / toggle main panels [{}]",
+            key.focus_left, key.focus_right, key.toggle_main_panels
         ),
         CMD_GROUP_GENERAL,
     )

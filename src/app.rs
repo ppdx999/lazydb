@@ -345,6 +345,15 @@ impl App {
     }
 
     fn move_focus(&mut self, key: Key) -> anyhow::Result<EventState> {
+        if key == self.config.key_config.toggle_main_panels {
+            // Toggle between DatabaseList and Table only
+            match self.focus {
+                Focus::DabataseList => self.focus = Focus::Table,
+                Focus::Table => self.focus = Focus::DabataseList,
+                Focus::ConnectionList => {} // No toggle for ConnectionList
+            }
+            return Ok(EventState::Consumed);
+        }
         if key == self.config.key_config.focus_connections {
             self.focus = Focus::ConnectionList;
             return Ok(EventState::Consumed);
@@ -408,5 +417,35 @@ mod test {
             EventState::Consumed
         );
         assert_eq!(app.left_main_chunk_percentage, 15);
+    }
+
+    #[test]
+    fn test_toggle_main_panels_with_tab() {
+        let mut app = App::new(Config::default());
+        
+        // Set focus to DabataseList
+        app.focus = super::Focus::DabataseList;
+        
+        // Tab should toggle to Table
+        assert_eq!(
+            app.move_focus(Key::Tab).unwrap(),
+            EventState::Consumed
+        );
+        assert!(matches!(app.focus, super::Focus::Table));
+        
+        // Tab should toggle back to DabataseList
+        assert_eq!(
+            app.move_focus(Key::Tab).unwrap(),
+            EventState::Consumed
+        );
+        assert!(matches!(app.focus, super::Focus::DabataseList));
+        
+        // Set focus to ConnectionList - Tab should not change focus
+        app.focus = super::Focus::ConnectionList;
+        assert_eq!(
+            app.move_focus(Key::Tab).unwrap(),
+            EventState::Consumed
+        );
+        assert!(matches!(app.focus, super::Focus::ConnectionList));
     }
 }
