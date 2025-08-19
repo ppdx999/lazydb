@@ -79,6 +79,7 @@ pub struct Connection {
 
 #[derive(Debug, Deserialize, Clone)]
 #[cfg_attr(test, derive(Serialize))]
+#[serde(default)]
 pub struct KeyConfig {
     pub scroll_up: Key,
     pub scroll_down: Key,
